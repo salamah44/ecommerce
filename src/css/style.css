@@ -244,6 +244,7 @@ body {
     border: 2px solid #EEF0EA;
     padding: 8px;
     cursor: pointer;
+    margin-bottom: 50px;
 }
 
 .custom-thumbnail:hover {
@@ -262,7 +263,7 @@ body {
 
 .price {
     color: #1f686e;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 130%;
 }
@@ -309,7 +310,7 @@ body {
 }
 
 .custom-carousel-indicators2 {
-    bottom: -70px !important;
+    bottom: -15px !important;
 }
 
 .custom-carousel-indicators2>li {
@@ -322,3 +323,36 @@ body {
 .custom-carousel-indicators2>li.active {
     background-color: #565656 !important;
 }
+
+.pannel {
+    border: 4px solid #EEF0EA;
+    border-radius: 2px;
+    padding: 20px;
+}
+
+.pannel h4, 
+.pannel .price {
+    font-size: 130%;
+    font-weight: 500;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.custom-text-muted {
+    color: #A9A9A9;
+}
+
+.arrow-btn {
+    border: 1px solid #EBEBEB;
+    background-color: #fff;
+    color: #868686;
+    border-radius: 2px;
+    padding: 5px 10px;
+    font-style: 12px;
+}
+
+#row-brands h3.heading {
+    border-top: 1px solid #EEF0EA;
+    padding-top: 25px;
+}
+
