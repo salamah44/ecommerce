@@ -9,6 +9,12 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 // طريقة مختصرة
 //document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(item => new bootstrap.Tooltip(item)); 
 
+document.querySelectorAll(".add-to-cart-btn").forEach(item => {
+    item.addEventListener("click", () => {
+        alert("أضيف المنتج إلى عربة الشراء")
+    })
+})
+
 console.log("أهلاً بك في متجر عربي"); 
 
 console.log("أهلاً بكم في أكاديمية حسوب"); 
