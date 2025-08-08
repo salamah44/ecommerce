@@ -80,3 +80,59 @@ function calculateTotalPrice() {
     document.getElementById('total-price-for-all-product').innerHTML = totalPriceForAllProduct;
 }
 
+const citiesByCountry = {
+    sa: ['جدة' ,'الرياض'], 
+    eg: ['الإسكندرية' ,'القاهرة'], 
+    jo: ['الزرقاء' ,'عمان'], 
+    sy: ['حلب' ,'دمشق'], 
+    ly: ['بنغازي' ,'طرابلس', 'طبرق', 'درنة', 'البيضاء', 'مصراتة', 'سبها', 'الزاوية', 'سرت'], 
+}
+
+document.querySelectorAll('select[name="country"]').forEach(item => {
+    item.addEventListener('change', () => {
+        const country = item.value; 
+
+        const cities = citiesByCountry[country]
+
+        document.querySelectorAll('#paymentcities option').forEach(option => option.remove())
+
+        const firstOption = document.createElement('option'); 
+        const optionText = document.createTextNode('اختر المدينة'); 
+        firstOption.appendChild(optionText); 
+        firstOption.setAttribute('value', ''); 
+        firstOption.setAttribute('disabled', 'true'); 
+        firstOption.setAttribute('selected', 'true'); 
+
+        const city_options = document.getElementById('paymentcities'); 
+        city_options.appendChild(firstOption); 
+
+        cities.forEach(city => {
+            const newOption = document.createElement('option'); 
+            const optionText = document.createTextNode(city); 
+            newOption.appendChild(optionText); 
+            newOption.setAttribute('value', city); 
+            city_options.appendChild(newOption); 
+        })
+    })
+})
+
+// إخفاء وإظهار حقول ادخال البطاقة الائتمانية
+
+document.querySelectorAll('#form-checkout input[name="payment-method"]').forEach(item => {
+    item.addEventListener('change', () => {
+        const paymentMethod = item.value; 
+
+        const creditCardInputs = document.querySelectorAll('#credit_card_info input'); 
+
+        if (paymentMethod === 'on_delivery') {
+            creditCardInputs.forEach(input => {
+                input.style.display='none' 
+            })
+        }else {
+            creditCardInputs.forEach(input => {
+                input.style.display='block' 
+            })
+        }
+    })
+})
+
